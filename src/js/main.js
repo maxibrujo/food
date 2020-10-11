@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Timer
 
-    const deadline = '2020-10-01';
+    const deadline = '2020-10-21';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -218,8 +218,8 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (evt) => {
             evt.preventDefault();
 
-            const statusMessage = document.createElement('div');
-            statusMessage.src = statusMessage.loading;
+            const statusMessage = document.createElement('img');
+            statusMessage.src = message.loading;
             statusMessage.style.cssText = `
             display: block;
             margin: 0 auto;
@@ -260,7 +260,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function showThanksModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog');
         // setTimeout(60000);
-        prevModalDialog.classList.add('hide');
+        // prevModalDialog.classList.add('hide');
+        prevModalDialog.style.display = 'none';
        
         openModal();
 
@@ -277,11 +278,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             thanksModal.remove();
-            prevModalDialog.classList.add('show');
-            prevModalDialog.classList.remove('hide');
+            // prevModalDialog.classList.add('show');
+            prevModalDialog.style.display = 'block';
+            // prevModalDialog.classList.remove('hide');
             closeModal();
         }, 4000);
     }
-
-
 });
