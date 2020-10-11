@@ -259,7 +259,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function showThanksModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog');
-        setTimeout(60000);
+        // setTimeout(60000);
         prevModalDialog.classList.add('hide');
        
         openModal();
